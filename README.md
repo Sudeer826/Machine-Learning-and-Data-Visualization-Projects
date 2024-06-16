@@ -10,7 +10,6 @@ Focuses on creating visual representations of data to make it easier to understa
 This can include charts, graphs, maps, and other visual elements.
 
 Machine Learning and Data Visualization Projects:
-
 Combine these techniques to gain insights from data and then present those insights in a clear and compelling way.
 
 This can involve tasks like:
