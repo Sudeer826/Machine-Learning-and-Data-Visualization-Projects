@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<style>
+input { 
+	width: 50%; 
+  height:60px;
+	margin-bottom: 10px; 
+	background: rgba(0,0,0,0.3);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 32px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 15px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+	-webkit-transition: box-shadow .5s ease;
+	-moz-transition: box-shadow .5s ease;
+	-o-transition: box-shadow .5s ease;
+	-ms-transition: box-shadow .5s ease;
+	transition: box-shadow .5s ease;
+}
+</style>
+  
+</head>
+
+<body>
+
+<h1>Credit Score Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="a" placeholder="Annual Income" required="required" />
+        <input type="text" name="b" placeholder="Monthly Inhand Salary" required="required" />
+		<input type="text" name="c" placeholder="Number Of Bank Accounts" required="required" />
+		<input type="text" name="d" placeholder="Number Of Credit Cards" required="required" />
+		<input type="text" name="e" placeholder="Interest Rate" required="required" />
+		<input type="text" name="f" placeholder="Number Of Loans" required="required" />
+		<input type="text" name="g" placeholder="Average Delay From Due Date" required="required" />
+		<input type="text" name="h" placeholder="Number Of Delayed Payment" required="required" />
+		<input type="text" name="i" placeholder="Credit Mix (Bad: 0, Standard: 1, Good: 2)" required="required" />
+		<input type="text" name="j" placeholder="Outstanding Debt" required="required" />
+		<input type="text" name="k" placeholder="Credit History Age" required="required" />
+		<input type="text" name="l" placeholder="Monthly Balance" required="required" />
+
+       <center> <button type="submit" class="btn btn-primary btn-block btn-large" style="width: 50%;height: 60px;">Predict</button></center>
+    </form>
+   <br>
+   {{ prediction_text }}
+
+
+
+</body>
+</html>
